@@ -14,58 +14,84 @@ class _HomeState extends State<Home> {
       stars.add(Icon(
         Icons.star,
         color: Color(0xFFFF8A00),
-        size: 15,
+        size: 17,
       ));
     }
-    stars.add(Text("$totalOrder (Pemesan)", style: TextStyle(fontSize: 10)));
+    // stars.add();
 
     return Container(
-        margin: const EdgeInsets.only(left: 20, right: 20),
+        margin: const EdgeInsets.only(left: 10, right: 10),
         child: Column(
           children: <Widget>[
-            image,
-            Padding(
-              padding: const EdgeInsets.only(top:16),
-              child: Column(
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      Text(
-                        title,
-                        style: TextStyle(
-                          fontSize: 20, 
-                          fontWeight: FontWeight.bold
-                        )
-                      ),
-                      
-                    ],
+            Stack(
+              alignment: AlignmentDirectional.topEnd,
+              children: <Widget>[
+                image,
+                Positioned(
+                  left: 20,
+                  top: 15,
+                  child: Container(
+                    child: Text(
+                      "Rp $price",
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white),
+                    ),
+                    padding: const EdgeInsets.all(6),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadiusDirectional.circular(12),
+                        color: Color(0xFFFF8A00)),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Row(children: stars),
-                      Container(
-                        child: Text(
-                          "Rp $price",
-                          style: TextStyle(
-                            fontSize: 10,
-                            color: Colors.white
-                          ),
-                        ),
-                        padding: const EdgeInsets.all(6),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadiusDirectional.circular(12),
-                          color: Color(0xFFFF8A00)
-                        ),
-                      )
-                    ],
-                  )
+                ),
+                Positioned(
+                  right: 10,
+                  bottom: 10,
+                  child: Container(
+                    padding: const EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.black12,
+                              offset: Offset(0, 10),
+                              blurRadius: 10)
+                        ]),
+                    child: Icon(
+                      Icons.favorite,
+                      color: Colors.red,
+                    ),
+                  ),
+                )
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Flexible(
+                    fit: FlexFit.loose,
+                    flex: 3,
+                    child: Column(
+                      children: <Widget>[
+                        Text(title,
+                            style: TextStyle(
+                                fontSize: 21, fontWeight: FontWeight.bold)),
+                        Row(children: stars),
+                        Text("$totalOrder (Pemesan)",
+                            style: TextStyle(fontSize: 10))
+                      ],
+                    ),
+                  ),
                 ],
               ),
             )
           ],
-        )
-      );
+        ));
   }
 
   Widget titleText(String title) {
@@ -100,7 +126,7 @@ class _HomeState extends State<Home> {
           Column(
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.only(left: 30, right: 30),
+                padding: const EdgeInsets.only(left: 30, right: 30, top: 30),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
@@ -140,33 +166,51 @@ class _HomeState extends State<Home> {
                   children: <Widget>[
                     _card(Image.asset('assets/images/makanan_1.png'),
                         "Gado Gado Betawi", "10.000", 5, 200),
-                    // _card(Image.asset('assets/images/makanan_2.png'),
-                    //     "Gado Gado Betawi", "10.000", 5, 200),
-                    // _card(Image.asset('assets/images/makanan_1.png'),
-                    //     "Gado Gado Betawi", "10.000", 5, 200)
+                    _card(Image.asset('assets/images/makanan_2.png'),
+                        "Gado Gado Betawi", "10.000", 5, 200),
+                    _card(Image.asset('assets/images/makanan_1.png'),
+                        "Gado Gado Betawi", "10.000", 5, 200)
                   ],
                 ),
               ),
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                      width: 200,
-                      height: 200,
-                      color: Colors.black,
-                    )
-                  ),
-                  Expanded(
-                    flex: 3,
-                    child: Container(
-                      width: 200,
-                      height: 200,
-                      color: Colors.red,
-                    ),
-                  )
-                ],
-              )
+              // SizedBox(height: 30),
+              titleText("Most Popular Food"),
+              SizedBox(height: 30),
+              Container(
+                height: 300.0,
+                child: ListView(
+                  physics: ScrollPhysics(),
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  children: <Widget>[
+                    _card(Image.asset('assets/images/makanan_1.png'),
+                        "Gado Gado Betawi", "10.000", 5, 200),
+                    _card(Image.asset('assets/images/makanan_2.png'),
+                        "Gado Gado Betawi", "10.000", 5, 200),
+                    _card(Image.asset('assets/images/makanan_1.png'),
+                        "Gado Gado Betawi", "10.000", 5, 200)
+                  ],
+                ),
+              ),
+              // SizedBox(height: 30),
+              titleText("Most Popular Food"),
+              SizedBox(height: 30),
+              Container(
+                height: 300.0,
+                child: ListView(
+                  physics: ScrollPhysics(),
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  children: <Widget>[
+                    _card(Image.asset('assets/images/makanan_1.png'),
+                        "Gado Gado Betawi", "10.000", 5, 200),
+                    _card(Image.asset('assets/images/makanan_2.png'),
+                        "Gado Gado Betawi", "10.000", 5, 200),
+                    _card(Image.asset('assets/images/makanan_1.png'),
+                        "Gado Gado Betawi", "10.000", 5, 200)
+                  ],
+                ),
+              ),
             ],
           )
         ]),
