@@ -131,7 +131,12 @@ class _HomeState extends State<Home> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Image.asset('assets/images/uniresto.png'),
-                    Image.asset('assets/images/menu.png')
+                    FlatButton(
+                      child: Image.asset('assets/images/menu.png'),
+                      onPressed: (){
+                        Navigator.pushNamed(context, '/catalog');
+                      },
+                    )
                   ],
                 ),
               ),
