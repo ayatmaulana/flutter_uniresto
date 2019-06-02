@@ -30,7 +30,7 @@ class _AppState extends State<App> {
                   data: Theme.of(context)
                       .copyWith(canvasColor: Colors.transparent),
                   child: Container(
-                    height: 70,
+                    height: 55,
                     width: MediaQuery.of(context).size.width * (99 / 100),
                     decoration: BoxDecoration(
                         color: Colors.white,
@@ -46,28 +46,47 @@ class _AppState extends State<App> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        GestureDetector(
-                          child: Icon(
-                            Icons.home,
-                            color: Colors.yellow[700],
-                            size: 30,
+                        Expanded(
+                          flex: 2,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              GestureDetector(
+                                child: Image.asset('assets/images/icon_home.png'),
+                                onTap: () {
+                                  setState(() {
+                                    _currentIndex = 0;
+                                  });
+                                },
+                              ),
+                              GestureDetector(
+                                child: Image.asset('assets/images/icon_star.png'),
+                                onTap: () {
+                                  setState(() {
+                                    _currentIndex = 1;
+                                  });
+                                },
+                              ),
+                            ],
                           ),
-                          onTap: () {
-                            setState(() {
-                              _currentIndex = 0;
-                            });
-                          },
                         ),
-                        GestureDetector(
-                          child: Icon(Icons.hot_tub),
-                          onTap: () {
-                            setState(() {
-                              _currentIndex = 1;
-                            });
-                          },
+                        Spacer(
+                          flex: 1,
                         ),
-                        Icon(Icons.file_download),
-                        Icon(Icons.fiber_pin),
+                        Expanded(
+                          flex: 2,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              InkWell(
+                                child: Image.asset('assets/images/icon_trolly.png'),
+                              ),
+                              InkWell(
+                                child: Image.asset('assets/images/icon_user.png'),
+                              ),
+                            ],
+                          ),
+                        )
                       ],
                     ),
                   ),
@@ -76,7 +95,7 @@ class _AppState extends State<App> {
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
-                  padding: const EdgeInsets.only(bottom: 40),
+                  padding: const EdgeInsets.only(bottom: 20),
                   child: Container(
                     padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
