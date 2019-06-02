@@ -7,10 +7,6 @@ class Header extends StatefulWidget {
 }
 
 class _HeaderState extends State<Header> {
-  // void _showAlert(BuildContext context){
-
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -23,22 +19,24 @@ class _HeaderState extends State<Header> {
             child: Image.asset('assets/images/menu.png'),
             onPressed: () {
               showCupertinoDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return  CupertinoAlertDialog(
-                      title: Text("Credit"),
-                      content: Text("Made With \n 💙 + Flutter \n - \n - \n Ayat Maulana "),
-                      actions: <Widget>[
-                        CupertinoDialogAction(
-                          isDefaultAction: true,
-                          child: Text("Yes"),
-                          onPressed: (){
-                            Navigator.of(context).pop();
-                          },
-                        ),
-                      ],
-                    );
-                  });
+                context: context,
+                builder: (BuildContext context) {
+                  return CupertinoAlertDialog(
+                    title: Text("Credit"),
+                    content: Text(
+                        "Made With \n 💙 + Flutter \n - \n - \n Ayat Maulana "),
+                    actions: <Widget>[
+                      CupertinoDialogAction(
+                        isDefaultAction: true,
+                        child: Text("Yes"),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                    ],
+                  );
+                }
+              );
             },
           )
         ],

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import './widgets/header.dart';
+import 'package:uniresto/ui/widgets/header.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -22,12 +22,7 @@ class _HomeState extends State<Home> {
     }
 
     return Container(
-      // decoration: BoxDecoration(
-      //                           border: Border.all(
-      //                             width: 20
-      //                           )
-      //                         ),
-      width: MediaQuery.of(context).size.width * 80/100,
+        width: MediaQuery.of(context).size.width * 80 / 100,
         padding: const EdgeInsets.only(),
         child: Column(
           children: <Widget>[
@@ -37,11 +32,6 @@ class _HomeState extends State<Home> {
                   alignment: AlignmentDirectional.topEnd,
                   children: <Widget>[
                     Container(
-                      // decoration: BoxDecoration(
-                      //           border: Border.all(
-                      //             width: 20
-                      //           )
-                      //         ),
                       padding: const EdgeInsets.only(bottom: 20),
                       width: MediaQuery.of(context).size.width * 77 / 100,
                       child: image,
@@ -71,41 +61,26 @@ class _HomeState extends State<Home> {
               ],
             ),
             Container(
-              //  decoration: BoxDecoration(
-              //                   border: Border.all(
-              //                     width: 1
-              //                   )
-              //                 ),
               width: MediaQuery.of(context).size.width,
               padding: const EdgeInsets.only(left: 17.0, right: 17.0, top: 1),
               child: Row(
-                // mainAxisSize: MainAxisSize.min,
-                // mainAxisAlignment: MainAxisAlignment.spaceAround,
-                // crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Flexible(
                     fit: FlexFit.tight,
-                    // flex: 3,
                     child: Column(
-                      // mainAxisAlignment: MainAxisAlignment.start,
-                      // mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Container(
-                          // decoration: BoxDecoration(
-                          //       border: Border.all(
-                          //         width: 10
-                          //       )
-                          //     ),
-                          width: MediaQuery.of(context).size.width * 40/100,
+                          width: MediaQuery.of(context).size.width * 40 / 100,
                           child: Text(title,
                               textAlign: TextAlign.left,
                               style: TextStyle(
                                   fontSize: 14, fontWeight: FontWeight.bold)),
                         ),
-                        SizedBox(height:5,),
+                        SizedBox(
+                          height: 5,
+                        ),
                         Container(
-                          
                           width: MediaQuery.of(context).size.width,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -116,7 +91,7 @@ class _HomeState extends State<Home> {
                                     Row(children: [
                                       ...stars,
                                       Text("$totalOrder (Pemesan)",
-                                        style: TextStyle(fontSize: 10)),
+                                          style: TextStyle(fontSize: 10)),
                                     ]),
                                   ],
                                 ),
@@ -146,7 +121,8 @@ class _HomeState extends State<Home> {
               ),
             )
           ],
-        ));
+        )
+      );
   }
 
   Widget titleText(String title) {

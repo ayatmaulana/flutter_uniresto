@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+
 import 'package:uniresto/ui/app.dart';
 import 'package:uniresto/ui/catalog.dart';
 import 'package:uniresto/ui/detail.dart';
-
-import 'ui/home.dart';
-import 'ui/register.dart';
-import 'ui/login.dart';
+import 'package:uniresto/ui/home.dart';
+import 'package:uniresto/ui/register.dart';
+import 'package:uniresto/ui/login.dart';
 
 void main() => runApp(MyApp());
 

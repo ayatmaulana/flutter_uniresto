@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import './widgets/header.dart';
+import 'package:uniresto/ui/widgets/header.dart';
 
 class Catalog extends StatefulWidget {
   @override
@@ -76,10 +75,13 @@ class _CatalogState extends State<Catalog> {
                               width: MediaQuery.of(context).size.width,
                               child: Text(title,
                                   style: TextStyle(
-                                    letterSpacing: 1,
-                                      fontSize: 13, fontWeight: FontWeight.w500)),
+                                      letterSpacing: 1,
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.w500)),
                             ),
-                            SizedBox(height: 5,),
+                            SizedBox(
+                              height: 5,
+                            ),
                             Container(
                               child: Text(
                                 "Rp $price",
@@ -135,7 +137,8 @@ class _CatalogState extends State<Catalog> {
                     physics: ScrollPhysics(),
                     shrinkWrap: true,
                     children: List.generate(10, (index) {
-                      String picture = index % 2 == 0 ? 'makanan_1' : 'makanan_2';
+                      String picture =
+                          index % 2 == 0 ? 'makanan_1' : 'makanan_2';
                       return card(
                           image: Image.asset("assets/images/$picture.png"),
                           price: "10.000",
