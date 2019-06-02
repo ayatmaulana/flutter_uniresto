@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:uniresto/ui/app.dart';
 import 'package:uniresto/ui/catalog.dart';
+import 'package:uniresto/ui/detail.dart';
 
 import 'ui/home.dart';
 import 'ui/register.dart';
@@ -15,8 +17,10 @@ class MyApp extends StatelessWidget {
       home: Login(),
       initialRoute: '/login',
       routes: <String, WidgetBuilder>{
+        '/app': (context) => App(),
         '/home': (context) => Home(),
         '/catalog': (context) => Catalog(),
+        '/detail': (context) => Detail(),
         '/login': (context) => Login(),
         '/register': (context) => Register()
       },

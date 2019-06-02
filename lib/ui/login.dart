@@ -11,14 +11,12 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    final heigh = MediaQuery.of(context).size.height;
 
     return Scaffold(
       body: ListView(
         children: <Widget>[
           Container(
             width: width,
-            height: heigh,
             decoration: BoxDecoration(
               gradient: LinearGradient(
                   begin: Alignment.topLeft,
@@ -40,12 +38,11 @@ class _LoginState extends State<Login> {
                     height: 10,
                   ),
                   formWidget('Password'),
-
                   SizedBox(
                     height: 30,
                   ),
                   buttonWidget("Login", callback: () {
-                    Navigator.pushNamed(context, '/home');
+                    Navigator.pushNamed(context, '/app');
                   }),
                   SizedBox(
                     height: 30,
@@ -61,14 +58,25 @@ class _LoginState extends State<Login> {
                         child: Text(
                           'Register',
                           style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold
-                          ),
+                              color: Colors.white, fontWeight: FontWeight.bold),
                         ),
-                        onPressed: () => Navigator.pushNamed(context, '/register'),
+                        onPressed: () =>
+                            Navigator.pushNamed(context, '/register'),
                       )
                     ],
-                  )
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      
+                    },
+                    child: Text(
+                      "Forgot Password",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
                 ],
               ),
             ),

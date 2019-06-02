@@ -58,7 +58,7 @@ class _RegisterState extends State<Register> {
                     height: 30,
                   ),
                   buttonWidget("Register", callback: () {
-                    Navigator.pushNamed(context, '/home');
+                    Navigator.pushNamed(context, '/app');
                   }),
                   SizedBox(
                     height: 30,

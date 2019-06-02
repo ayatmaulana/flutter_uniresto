@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 Widget buttonWidget(String text, {Function callback})  {
-  return SizedBox(
+  return Container(
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.all(Radius.circular(55)),
+    ),
     width: double.infinity,
     height: 60.0,
     child: FlatButton(
