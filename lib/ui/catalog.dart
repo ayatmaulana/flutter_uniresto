@@ -142,7 +142,7 @@ class _CatalogState extends State<Catalog> {
                       return card(
                           image: Image.asset("assets/images/$picture.png"),
                           price: "10.000",
-                          title: "Martabak Goregn Special",
+                          title: "Martabak Goreng Special",
                           callback: () {
                             Navigator.pushNamed(context, '/detail');
                           });
