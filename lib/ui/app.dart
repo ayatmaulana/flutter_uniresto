@@ -51,7 +51,7 @@ class _AppState extends State<App> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              GestureDetector(
+                              InkWell(
                                 child: Image.asset('assets/images/icon_home.png'),
                                 onTap: () {
                                   setState(() {
@@ -59,7 +59,7 @@ class _AppState extends State<App> {
                                   });
                                 },
                               ),
-                              GestureDetector(
+                              InkWell(
                                 child: Image.asset('assets/images/icon_star.png'),
                                 onTap: () {
                                   setState(() {
