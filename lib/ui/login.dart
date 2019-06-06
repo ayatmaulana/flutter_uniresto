@@ -11,18 +11,23 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
 
     return Scaffold(
       body: ListView(
         children: <Widget>[
           Container(
             width: width,
+            height: height,
             decoration: BoxDecoration(
               gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   stops: [0, 1],
-                  colors: <Color>[Color(0xff0287D1), Color(0xff40BCF2)]),
+                  colors: <Color>[
+                    Color(0xff0287D1),
+                    Color(0xff40BCF2)
+                  ]),
             ),
             child: Padding(
               padding: const EdgeInsets.all(40),
