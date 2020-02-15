@@ -4,7 +4,7 @@ A new Flutter project.
 
 ## Getting Started
 
-![](https://media.giphy.com/media/JPbRqeIBbo3p3MSDoE/giphy.gif)
+[![Watch the video]()](https://thumbs.gfycat.com/CraftyScaredGlobefish-mobile.mp4)
 
 ## Feature
 
